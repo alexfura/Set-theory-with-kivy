@@ -1,0 +1,68 @@
+# kivy 1.1.0
+
+<RootWidget>:
+    GridLayout:
+        cols: 2
+        padding: 10
+        spacing: 10
+        size: root.size
+        canvas:
+            Color:
+                rgb: 1, 1, 1
+            Rectangle:
+                source: 'picture.jpg'
+                size: root.size
+        Label:
+            text: 'Enter A'
+            halign: 'left'
+            text_size: 200, None
+            font_size: 25
+        TextInput:
+            id: a_set
+            multiline: False
+            padding: 20
+
+        Label:
+            text: 'Enter B'
+            halign: 'left'
+            text_size: 200, None
+            font_size: 25
+        TextInput:
+            id: b_set
+            multiline: False
+            padding: 20
+        Label:
+            text: 'Result:'
+            halign: 'left'
+            text_size: 200, None
+            font_size: 25
+        Label:
+            id: result_field
+            text: ''
+            halign: 'left'
+            font_size: 15
+
+
+
+        Button:
+            on_press: root.count("difference_a")
+            text: 'A / B'
+        Button:
+            on_press: root.count("difference_b")
+            text: 'B / A'
+        Button:
+            on_press: root.count("unity")
+            text: 'A unity B'
+        Button:
+            on_press: root.count("intersection")
+            text: 'A intersect B'
+        Button:
+            on_press: root.count("symmetric_difference")
+            text: 'A symmetric difference B'
+
+        Button:
+            on_press: root.clear(root)
+            text: 'Clear'
+        Button:
+            on_press: root.rand_set(root)
+            text: 'Random'
